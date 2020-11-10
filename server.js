@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 const userRouter = require("./users/users-router.js");
+const authRouter = require("./auth/auth-router");
 
 const server = express();
 
@@ -17,5 +18,6 @@ server.get("/", (req, res) => {
 });
 
 server.use("/api/users", userRouter);
+server.use("/api/auth", authRouter);
 
 module.exports = server;
